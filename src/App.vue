@@ -1,19 +1,12 @@
 <template>
-  <div id="app">
-    <span>Tesdting</span>
-    <AppHeader />
+  <div id="app" class="is-center">
+    <router-view />
   </div>
 </template>
 
 <script>
-  console.log("in app.vue");
-  import AppHeader from "./components/layout/AppHeader";
 export default {
-  name: "app",
-  components: {
-    AppHeader
-  }
-
+  name: "app"
 };
 </script>
 
@@ -24,6 +17,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 20px;
 }
 </style>

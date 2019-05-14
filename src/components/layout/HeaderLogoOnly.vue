@@ -17,44 +17,16 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <router-link to="/patterns" class="navbar-item">
-          Sirvi mustreid
-        </router-link>
-        <a class="navbar-item">
-          Lisa muster
-        </a>
-      </div>
-
-      <div class="navbar-end">
-        <router-link to="basket">
-          <img
-            class="navbar-item"
-            src="../../assets/cart.svg"
-            alt="cart"
-            width="50"
-            height="50"
-          />
-        </router-link>
-      </div>
-    </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: "AppHeader"
+  name: "HeaderLogoOnly"
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.input {
-  width: 400px;
-}
-
 nav {
   margin-bottom: 50px;
 }
