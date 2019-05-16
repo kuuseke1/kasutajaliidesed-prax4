@@ -2,44 +2,71 @@
   <div class="container">
     <div class="container">
       <span class="subtitle">
-        Visitors by days
+        Visitors by months
       </span>
-      <line-chart :chart-data="chartCollection1"></line-chart>
-    </div>
-    <div class="container">
+      <line-chart
+        :chartdata="this.linechartdata"
+        :width="500"
+        :height="200"
+        :options="lineoptions"
+      />
       <span class="subtitle">
-        Average visiting times
+        Number of purchases for different products
       </span>
-      <line-chart :chart-data="chartCollection2"></line-chart>
-    </div>
-    <div class="container">
+      <bar-chart
+        :chartdata="this.barchartdata"
+        :options="baroptions"
+        :width="500"
+        :height="200"
+      />
       <span class="subtitle">
-        Money spent by days
+        Number of purchases by county
       </span>
-      <line-chart :chart-data="chartCollection3"></line-chart>
+      <doughnut-chart
+        :chartdata="this.piechartdata"
+        :options="pieoptions"
+        :width="500"
+        :height="200"
+      />
     </div>
   </div>
 </template>
 
 <script>
-  import json from "../data.json";
+import LineChart from "../components/LineChart.vue";
+import BarChart from "../components/BarChart.vue";
+import DoughnutChart from "../components/DonutChart";
+import json from "../json/visitordata.js";
+import productdata from "../json/productdata.js";
+import visitorplaces from "../json/visitorplaces.js";
 
-  export default {
-    name: "Dashboard",
-    components: {
-    },
-    data() {
-      return {
-        dataCollection1: null,
-        dataCollection2: null,
-        dataCollection3: null
-      };
-    },
-    created() {
-      console.log(json);
-      this.dataCollection1 = json[0];
+export default {
+  name: "Dashboard",
+  components: {
+    LineChart,
+    BarChart,
+    DoughnutChart
+  },
+  data: () => [
+    {
+      linechartdata: null,
+      lineoptions: { maintainAspectRatio: false },
+      barchartdata: null,
+      baroptions: { maintainAspectRatio: false },
+      piechartdata: null,
+      pieoptions: { maintainAspectRatio: false }
     }
-  };
+  ],
+  created() {
+    this.linechartdata = json;
+    this.barchartdata = productdata;
+    this.piechartdata = visitorplaces;
+  }
+};
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.subtitle {
+  margin: 50px;
+}
+</style>

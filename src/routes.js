@@ -6,7 +6,6 @@ import BankChoose from "./pages/BankChoose.vue";
 import SuccessPage from "./pages/SuccessPage.vue";
 import Basket from "./pages/Basket";
 import Dashboard from "./pages/Dashboard";
-import Recieve from "./pages/Receive";
 
 export default [
   {
@@ -49,10 +48,5 @@ export default [
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard
-  },
-  {
-    path: "/recieve",
-    name: "recieve",
-    component: Recieve
   }
 ];

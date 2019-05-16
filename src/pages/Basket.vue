@@ -16,6 +16,11 @@ import BasketItem from "../components/layout/BasketItem";
 export default {
   name: "Basket",
   components: { BasketItem, AppHeader },
-  props: ["patterns"]
+  props: ["patterns"],
+  methods: {
+    deleteItem: function() {
+      this.patterns = null;
+    }
+  }
 };
 </script>
